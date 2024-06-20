@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css file -->
+    <link rel="stylesheet" href="./Styles/main.css" />
+    <title>Manzely</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="content">
+          <div class="logo">
+            <h1>منزلي</h1>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="./index.html">الرئيسية</a></li>
+              <li><a href="./About.html">من نحن</a></li>
+              <li><a href="#">العروض والعقارات</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div id="sign" class="sign">
+      <form>
+        <div class="name">
+          <p>الاسم الكامل</p>
+          <input
+            id="username"
+            type="text"
+            name="name"
+            placeholder="ادخل اسمك باللغة العربية"
+          />
+        </div>
+        <div class="national-number">
+          <p>الرقم الوطني</p>
+          <input
+            id="n-num"
+            type="number"
+            name="national_num"
+            placeholder="ادخل الرقم الوطني"
+          />
+        </div>
+        <div class="date">
+          <p>تاريخ الولادة</p>
+          <input
+            id="birth"
+            type="text"
+            name="date"
+            placeholder="ادخل تاريخ ولادتك بالشكل سنة/شهر/يوم"
+          />
+        </div>
+        <div class="phone">
+          <p>رقم الموبايل</p>
+          <input
+            id="phony"
+            type="text"
+            name="phone"
+            placeholder=" ادخل رقم موبايلك"
+          />
+        </div>
+        <div class="phone">
+          <p>البريد الالكتروني</p>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder=" ادخل الايميل الخاص بك"
+          />
+        </div>
+        <div class="capatcha">
+          <p>التحقق</p>
+          <input
+            id="valid"
+            type="number"
+            name="validate"
+            placeholder=" ادخل الرقم الظاهر امامك"
+          />
+          <p id="validTe"></p>
+        </div>
+        <div>
+          <button id="cancel" class="cancel">الغاء</button>
+        </div>
+        <div>
+          <button type="submit" id="calculate" class="calculate">تسجيل</button>
+        </div>
+      </form>
+    </div>
+    <div class="properties">
+      <div class="container">
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <td>المدينة</td>
+                <td>تفاصيل</td>
+                <td>الايجار الشهري</td>
+                <td>اظهار التفاصيل</td>
+                <td>اختيار</td>
+              </tr>
+            </thead>
+            <tr
+              data-id="1"
+              data-price="6000000"
+              data-des="
+                    شقة في دمشق بمساحة 140م مفروشة طابق اول وباكساء ممتاز
+                    الملكية طابو اخضر وبايجار شهري ستة مليون ليرة سورية."
+            >
+              <td>دمشق</td>
+              <td>شقة مساحة 140م</td>
+              <td>6000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في دمشق بمساحة 140م مفروشة طابق اول وباكساء ممتاز الملكية
+                  طابو اخضر وبايجار شهري ستة مليون ليرة سورية.
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/2.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/22.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="2"
+              data-price="3000000"
+              data-des="شقة في ضاحية قدسيا في دمشق بمساحة 120م اكساء سوبر ديلوكس ملكية
+            طابو وبايجار شهري ثلاثة مليون ليرة سورية"
+            >
+              <td>ضاحية قدسيا</td>
+              <td>شقة مساحة 120م</td>
+              <td>3000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في ضاحية قدسيا في دمشق بمساحة 120م اكساء سوبر ديلوكس ملكية
+                  طابو وبايجار شهري ثلاثة مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/1.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/11.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="3"
+              data-price="2000000"
+              data-des="شقة في  قدسيا في دمشق بمساحة 150م اكساء جيد ملكية
+            طابو وبايجار شهري 2 مليون ليرة سورية"
+            >
+              <td>قدسيا</td>
+              <td>شقة مساحة 150</td>
+              <td>2000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في قدسيا في دمشق بمساحة 150م اكساء جيد ملكية طابو وبايجار
+                  شهري 2 مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/1.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/33.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="4"
+              data-price="4000000"
+              data-des="شقة في  مشروع دمر في دمشق بمساحة 100م اكساء جيد ملكية
+            طابو وبايجار شهري 4 مليون ليرة سورية"
+            >
+              <td>مشروع دمر</td>
+              <td>شقة مساحة 100م</td>
+              <td>4000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في مشروع دمر في دمشق بمساحة 100م اكساء جيد ملكية طابو
+                  وبايجار شهري 4 مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/1.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="5"
+              data-price="5000000"
+              data-des="شقة في الصالحية في دمشق بمساحة 100م اكساء جيد ملكية
+            طابو طابق اول وبايجار شهري خمسة مليون ليرة سورية"
+            >
+              <td>الصالحية</td>
+              <td>شقة مساحة 100م</td>
+              <td>5000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في الصالحية في دمشق بمساحة 100م اكساء جيد ملكية طابو طابق
+                  اول وبايجار شهري خمسة مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/5.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="6"
+              data-price="3000000"
+              data-des="شقة في ضاحية قدسيا في دمشق بمساحة 80م اكساء ديلوكس ملكية
+            طابو طابق اول وبايجار شهري ثلاثة مليون ليرة سورية"
+            >
+              <td>ضاحية قدسيا</td>
+              <td>شقة مساحة 80م</td>
+              <td>5000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في ضاحية قدسيا في دمشق بمساحة 80م اكساء ديلوكس ملكية طابو
+                  طابق اول وبايجار شهري ثلاثة مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/6.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="7"
+              data-price="5000000"
+              data-des="شقة في المزة في دمشق بمساحة 75م اكساء ديلوكس يوجد ناطور ملكية
+            طابو طابق اول وبايجار شهري خمسة مليون ليرة سورية"
+            >
+              <td>المزة</td>
+              <td>شقة مساحة 75م</td>
+              <td>5000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في المزة في دمشق بمساحة 75م اكساء ديلوكس يوجد ناطور ملكية
+                  طابو طابق اول وبايجار شهري خمسة مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/7.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/77.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="8"
+              data-price="8000000"
+              data-des="شقة في المالكي في دمشق بمساحة 200م اكساء ديلوكس يوجد ناطور ملكية
+            طابو طابق اول وبايجار شهري ثمانية مليون ليرة سورية"
+            >
+              <td>المالكي</td>
+              <td>شقة مساحة 200م</td>
+              <td>8000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في المالكي في دمشق بمساحة 200م اكساء ديلوكس يوجد ناطور
+                  ملكية طابو طابق اول وبايجار شهري ثمانية مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/8.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/1.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="9"
+              data-price="5000000"
+              data-des="شقة في الميسات في دمشق بمساحة 100م اكساء ديلوكس يوجد غرفة خدمات ملكية
+            طابو طابق ارضي وبايجار شهري خمسة مليون ليرة سورية"
+            >
+              <td>الميسات</td>
+              <td>شقة مساحة 100م</td>
+              <td>5000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في الميسات في دمشق بمساحة 100م اكساء ديلوكس يوجد غرفة
+                  خدمات ملكية طابو طابق ارضي وبايجار شهري خمسة مليون ليرة سورية
+                </p>
+
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/1.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/33.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-id="10"
+              data-price="3000000"
+              data-des="شقة في الميدان في دمشق بمساحة 120م اكساء ديلوكس يوجد ناطور ملكية
+            طابو طابق اول وبايجار شهري خمسة مليون ليرة سورية"
+            >
+              <td>الميدان</td>
+              <td>شقة مساحة 120م</td>
+              <td>3000.000</td>
+              <td><span class="showdetails"></span></td>
+              <td><span class="addtocart"></span></td>
+            </tr>
+            <tr class="detail disable">
+              <td colspan="5">
+                <h3>التفاصيل</h3>
+                <p class="property-details">
+                  شقة في الميدان في دمشق بمساحة 120م اكساء ديلوكس يوجد ناطور
+                  ملكية طابو طابق اول وبايجار شهري خمسة مليون ليرة سورية
+                </p>
+                <div class="images">
+                  <div class="">
+                    <img src="./Assets/5.jpg" alt="" />
+                  </div>
+                  <div class="">
+                    <img src="./Assets/4.jpg" alt="" />
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <button id="contin" class="selection">متابعة</button>
+      </div>
+    </div>
+    <script src="./js/myFunctions.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css file -->
+    <link rel="stylesheet" href="./Styles/main.css" />
+    <title>Manzely</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="content">
+          <div class="logo">
+            <h1>منزلي</h1>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="./About.html">من نحن</a></li>
+              <li><a href="./properties.html">العروض والعقارات</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="cart">
+      <div class="container">
+        <h1>المشتريات</h1>
+        <div id="listofcart" class="list"></div>
+        <div class="total">
+          <h3>الاجمالي</h3>
+          <h3 id="total"></h3>
+        </div>
+      </div>
+    </div>
+    <script>
+      const cartContent = document.getElementById("listofcart");
+      const totalEl = document.getElementById("total");
+      console.log(cartContent);
+      window.onload = function () {
+        cartToPage();
+      };
+      function cartToPage() {
+        // Create the container div element with the class "record"
+        let recordDiv = document.createElement("div");
+        recordDiv.className = "record";
+
+        // Create the first paragraph element with the text "الوصف"
+        let descriptionParagraph = document.createElement("p");
+        descriptionParagraph.textContent = "الوصف";
+
+        // Create the second paragraph element with the text "السعر"
+        let priceParagraph = document.createElement("p");
+        priceParagraph.textContent = "السعر";
+
+        // Append the paragraph elements to the container div
+        recordDiv.appendChild(descriptionParagraph);
+        recordDiv.appendChild(priceParagraph);
+
+        // Append the container div to the document body
+        cartContent.appendChild(recordDiv);
+
+        let sessionString = sessionStorage.getItem("theArray");
+        let theCart = JSON.parse(sessionString);
+        let thediv, firstPh, secondPh;
+        let total = 0;
+        console.log(theCart);
+        for (let i = 0; i < theCart.length; i++) {
+          // Create the container div element with the class "record"
+          thediv = document.createElement("div");
+          thediv.className = "record";
+
+          // Create the first paragraph element with the text "الوصف"
+          firstPh = document.createElement("p");
+          firstPh.textContent = theCart[i].des;
+
+          // Create the second paragraph element with the text "السعر"
+          secondPh = document.createElement("p");
+          secondPh.textContent = theCart[i].price;
+
+          // Append the paragraph elements to the container div
+          thediv.appendChild(firstPh);
+          thediv.appendChild(secondPh);
+
+          // Append the container div to the document body
+          cartContent.appendChild(thediv);
+
+          total += parseInt(theCart[i].price);
+        }
+        totalEl.textContent = total;
+      }
+    </script>
+  </body>
+</html>
